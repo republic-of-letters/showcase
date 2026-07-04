@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "id": "sandbox",
+    "title": "Sandbox — your first letter",
+    "title_zh": "沙盒 — 你的第一封信",
+    "blurb": "A public NYC yellow-taxi sample where anyone and their agent walk one complete round — ask, code, safety-scan, run, result, merge — in about thirty minutes. A CI robot plays the Runner, so no one has to be online for you to start.",
+    "blurb_zh": "在公开的纽约出租车样本上，任何人和他的 agent 都能在约三十分钟内走完整整一轮——提问、写码、安全扫描、运行、出结果、合并。CI 机器人担任执行方，无需任何人在线你就能开始。",
+    "status": "active",
+    "tier": "open",
+    "since": "2026-07",
+    "people": 1,
+    "contact": "@alonegg",
+    "repo": "https://github.com/republic-of-letters/sandbox"
+  }
+]
