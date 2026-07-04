@@ -4,29 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Republic of Letters</title>
-<meta name="description" content="A research collaboration space where humans and their AI agents do empirical work by correspondence — under one protocol, behind three human gates.">
+<meta name="description" content="Faculty, students, and their AI agents do empirical research by correspondence. Code travels to the data; only results travel back.">
 <style>{{CSS}}</style>
 </head>
 <body>
 <main>
   <nav>
     <a href="#why">Why</a><a href="#modes">Modes</a><a href="#projects">Projects</a>
-    <a href="#notices">Notice board</a><a href="#join">Participate</a><a href="#faq">FAQ</a>
-    <a href="letter/">Read one letter</a>
+    <a href="#notices">Board</a><a href="#join">Join</a><a href="#faq">FAQ</a>
+    <a href="letter/">Read a letter</a>
     <a class="lang" href="zh/">中文</a>
   </nav>
 
   <header>
-    <div class="seal">Respublica Literaria · est. 2026</div>
+    <span class="seal">Respublica Literaria · 2026</span>
     <h1>Republic of Letters</h1>
-    <p class="lead">A research collaboration space where faculty, students, and their
-    AI agents do empirical work by correspondence. Questions and code travel out,
-    results travel back — and every step is a reviewable letter in a permanent
-    archive. Named for the 17th-century scholars' network that did science by mail.</p>
-    <p class="path">Understand this place in: <b>30 s</b> — the diagram below ·
-    <b>3 min</b> — this page · <b>5 min</b> — <a href="letter/">read one letter</a> ·
-    <b>15 min</b> — <a href="https://github.com/republic-of-letters/protocol">the protocol</a> ·
-    <b>30 min</b> — the drill, and you're onboarded.</p>
+    <p class="lead">Faculty, students, and their AI agents doing empirical research
+    by correspondence. Code travels to the data; only results travel back; every step
+    is a letter in a permanent archive.</p>
+    <p class="path">Get it in: <b>30s</b> — the diagram · <b>3 min</b> — this page ·
+    <b>5 min</b> — <a href="letter/">read a letter</a> · <b>15 min</b> —
+    <a href="https://github.com/republic-of-letters/protocol">the protocol</a> ·
+    <b>30 min</b> — the drill, and you're in.</p>
     <svg class="loop" viewBox="0 0 760 252" role="img" aria-label="The loop: a proposer sends a question and code as a pull request; the runner executes it on data that never moves and replies with aggregate results; three human gates govern the exchange.">
       <defs>
         <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
@@ -34,17 +33,17 @@
         </marker>
       </defs>
       <rect x="505" y="45" width="235" height="160" rx="14" fill="none" stroke="var(--muted)" stroke-dasharray="5 5"/>
-      <rect x="25" y="70" width="200" height="90" rx="10" fill="var(--card)" stroke="var(--line)"/>
+      <rect x="25" y="70" width="200" height="90" rx="12" fill="var(--tint)" stroke="none"/>
       <text x="125" y="108" text-anchor="middle" class="t">PROPOSER</text>
       <text x="125" y="130" text-anchor="middle" class="s">ideas + code</text>
-      <rect x="525" y="70" width="195" height="90" rx="10" fill="var(--card)" stroke="var(--line)"/>
+      <rect x="525" y="70" width="195" height="90" rx="12" fill="var(--tint)" stroke="none"/>
       <text x="622" y="108" text-anchor="middle" class="t">RUNNER</text>
       <text x="622" y="130" text-anchor="middle" class="s">data + compute</text>
       <text x="622" y="192" text-anchor="middle" class="s">the data never leaves</text>
-      <path d="M225,95 L521,95" fill="none" stroke="var(--accent)" marker-end="url(#arr)"/>
-      <text x="373" y="80" text-anchor="middle" class="s">the letter: a question + runnable code (one pull request)</text>
-      <path d="M525,140 L229,140" fill="none" stroke="var(--accent)" marker-end="url(#arr)"/>
-      <text x="373" y="166" text-anchor="middle" class="s">the reply: figures + tables — aggregates only, never data</text>
+      <path d="M225,95 L521,95" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text x="373" y="80" text-anchor="middle" class="s">a question + runnable code (one pull request)</text>
+      <path d="M525,140 L229,140" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text x="373" y="166" text-anchor="middle" class="s">figures + tables — aggregates only, never data</text>
       <text x="380" y="240" text-anchor="middle" class="gatecap">three gates, opened only by humans: topic · data · merge</text>
     </svg>
   </header>
@@ -54,40 +53,38 @@
     <div class="grid">
       <article class="card door">
         <h3>“I hold data”</h3>
-        <p>Your data never moves. Collaborators' code comes to you; you run it after
-        a safety review; only aggregates go back.</p>
+        <p>Your data never moves. Code comes to you; you run it; only aggregates go back.</p>
         <ol>
           <li>Read the <a href="#modes">data–idea partnership</a> mode</li>
-          <li>Post an <a href="#notices">offering notice</a> — a silhouette, never the schema</li>
+          <li>Post an <a href="#notices">offering</a> — a silhouette, not the schema</li>
           <li>When someone knocks, start a project as its Runner</li>
         </ol>
       </article>
       <article class="card door">
         <h3>“I have ideas, no data”</h3>
-        <p>Somewhere on this board is a dataset waiting for exactly your question.</p>
+        <p>A dataset here may be waiting for exactly your question.</p>
         <ol>
-          <li>Scan the <a href="#notices">notice board</a> and the <a href="#projects">projects</a></li>
+          <li>Scan the <a href="#notices">board</a> and the <a href="#projects">projects</a></li>
           <li>Answer a notice, or <a href="https://github.com/republic-of-letters/showcase/issues/new/choose">apply to join</a></li>
-          <li>Propose your first round — code travels, so you never need the data in hand</li>
+          <li>Propose a round — code travels, so you never hold the data</li>
         </ol>
       </article>
       <article class="card door">
         <h3>“I'm a student”</h3>
-        <p>Do real research inside guardrails. Every merged contribution is
-        attributed to you, permanently, in a record anyone can verify.</p>
+        <p>Real research inside guardrails — every contribution permanently yours.</p>
         <ol>
-          <li>Pick a project <a href="#projects">open to applications</a> — replication is an ideal first contribution</li>
-          <li>Onboard with your AI agent and pass the drill (~30 min)</li>
-          <li>Propose rounds; your mentor co-signs every merge</li>
+          <li>Pick a project <a href="#projects">open to applications</a></li>
+          <li>Onboard with your agent, pass the drill (~30 min)</li>
+          <li>Propose rounds; your mentor co-signs each merge</li>
         </ol>
       </article>
       <article class="card door">
         <h3>“We're already a team”</h3>
-        <p>Skip the courtship — take the machinery.</p>
+        <p>Skip the courtship. Take the machinery.</p>
         <ol>
-          <li><code>gh repo create &lt;owner&gt;/&lt;name&gt; --template republic-of-letters/protocol --private</code></li>
+          <li><code>gh repo create … --template republic-of-letters/protocol --private</code></li>
           <li>Ten minutes of <code>SETUP.md</code></li>
-          <li>Open your first topic; each member passes the drill once</li>
+          <li>Open your first topic; each member drills once</li>
         </ol>
       </article>
     </div>
@@ -95,84 +92,71 @@
 
   <section id="why">
     <h2>Why work this way</h2>
-    <p class="kicker">Cross-institution empirical research usually stalls on the same
-    four things: moving data, trusting code, losing context, and settling credit.
-    This space removes all four by construction.</p>
+    <p class="kicker">Cross-institution research stalls on four things: moving data,
+    trusting code, losing context, settling credit. This space removes all four by
+    construction.</p>
     <div class="cols">
       <div><span class="n">DATA</span>
         <h3>Your data never leaves your machine</h3>
-        <p>Collaborators send code; you run it after a safety review; only aggregates
-        — figures, tables, write-ups — come back. No transfer agreements, no copies
-        floating around. CI physically rejects raw data from every repository.</p></div>
+        <p>Collaborators send code; you run it after a safety check; only figures,
+        tables, and write-ups come back. CI blocks raw data from every repo.</p></div>
       <div><span class="n">AGENTS</span>
         <h3>Built for the agent era</h3>
-        <p>Every member works with an AI agent. The protocol is written to be
-        <em>executed</em> by agents — exact commands, file contracts, hard
-        boundaries — so agents do the legwork at machine speed while humans keep
-        every decision that matters.</p></div>
+        <p>Every member works with an AI agent. The protocol is written for agents to
+        execute — they do the legwork, humans keep every real decision.</p></div>
       <div><span class="n">MEMORY</span>
         <h3>Everything on the record</h3>
-        <p>Every question, run, decision, and dead end is a diffable file under
-        version control. A new collaborator — or a fresh agent session — can
-        reconstruct the whole history. Killed ideas get post-mortems, not silence.</p></div>
+        <p>Every question, run, and dead end is a versioned file. A new collaborator —
+        or a fresh agent — can reconstruct the whole history.</p></div>
       <div><span class="n">TRUST</span>
         <h3>Trust is structural, not personal</h3>
-        <p>No code touches real data until it passes an automated scan <em>and</em> a
-        human read. Nothing enters the record until humans on both sides agree.
-        Every published number carries its provenance level.</p></div>
+        <p>No code touches data without an automated scan plus a human read. Nothing
+        ships until both sides agree. Every number carries its provenance.</p></div>
       <div><span class="n">CREDIT</span>
-        <h3>Authorship settled early, in writing</h3>
-        <p>Name order — or the rule that decides it — is fixed no later than the
-        moment a topic gets its GO, with data and compute contributions counted.
-        Deferring it is a protocol violation, not an oversight.</p></div>
+        <h3>Authorship settled early</h3>
+        <p>Name order is fixed in writing before a topic gets its GO — data and compute
+        count. Deferring it breaks protocol.</p></div>
       <div><span class="n">COST</span>
         <h3>Zero infrastructure, zero lock-in</h3>
-        <p>It's plain GitHub: free, familiar, durable. One command starts a project;
-        if you ever leave, you take the complete archive with you. Nothing
-        proprietary anywhere in the loop.</p></div>
+        <p>Plain GitHub: free, familiar, yours to leave with. One command starts a
+        project; nothing proprietary in the loop.</p></div>
     </div>
   </section>
 
   <section id="modes">
     <h2>What you can run here</h2>
-    <p class="kicker">One protocol, several shapes. Each mode below is the same
-    machinery — topics, rounds, human gates — arranged for a different kind of
-    collaboration.</p>
+    <p class="kicker">One protocol, several shapes — the same machinery arranged for
+    a different kind of collaboration.</p>
     <div class="grid">
       <article class="card mode">
         <h3>Co-authored paper</h3>
-        <p>The classic unit. One topic = one candidate paper: probe rounds test
-        feasibility, GO fixes authorship, analysis rounds build the results, and the
-        merged archive becomes the paper's audit trail.</p>
+        <p>One topic = one candidate paper. Probe → GO → analysis rounds → a merged
+        archive that is the paper's audit trail.</p>
         <p class="who">For: 2–5 researchers with a shared question.</p>
       </article>
       <article class="card mode">
         <h3>Data–idea partnership</h3>
-        <p>One side holds data and compute, the other brings hypotheses and code —
-        the founding pattern of this space. Restricted-licence data (WRDS, Compustat…)
-        stays on the licence-holder's machine and joins on derived tables.</p>
-        <p class="who">For: data owners + methodologists who couldn't otherwise work together.</p>
+        <p>One side holds data and compute, the other brings hypotheses and code.
+        Restricted-licence data stays put and joins on derived tables.</p>
+        <p class="who">For: data owners + methodologists.</p>
       </article>
       <article class="card mode">
         <h3>Research programme</h3>
-        <p>A funded project or long-running agenda as one repository with several
-        topics under it. Decision logs give the programme institutional memory;
-        milestones are merged rounds anyone can verify.</p>
-        <p class="who">For: grant projects, lab agendas, multi-paper collaborations.</p>
+        <p>A funded project or long agenda as one repo with many topics. Decision logs
+        are its memory; milestones are verifiable rounds.</p>
+        <p class="who">For: grants, labs, multi-paper work.</p>
       </article>
       <article class="card mode">
-        <h3>Thesis &amp; student training</h3>
-        <p>Students propose rounds; the mentor holds a co-review gate on every merge.
-        The student learns by doing real research inside guardrails, and the merged
-        archive is the cleanest possible record of their work.</p>
-        <p class="who">For: supervisors and their graduate or undergraduate students.</p>
+        <h3>Thesis &amp; training</h3>
+        <p>Students propose rounds; the mentor co-signs every merge. Real research
+        inside guardrails, with a clean record of the work.</p>
+        <p class="who">For: supervisors and their students.</p>
       </article>
       <article class="card mode">
         <h3>Replication &amp; robustness</h3>
-        <p>Re-run an existing analysis as rounds — same question, independent
-        execution. Successful re-runs earn results the <code>replicated</code>
-        provenance level. An ideal first contribution for a new member.</p>
-        <p class="who">For: students entering a project; teams hardening a result before submission.</p>
+        <p>Re-run an analysis independently. A successful re-run earns the
+        <code>replicated</code> provenance — an ideal first contribution.</p>
+        <p class="who">For: new members; teams hardening a result.</p>
       </article>
     </div>
   </section>
@@ -180,98 +164,80 @@
   <section id="how">
     <h2>How it works</h2>
     <div class="cols">
-      <div><span class="n">I — TOPICS</span>
+      <div><span class="n">I · TOPICS</span>
         <h3>One candidate paper, one topic</h3>
-        <p>Hypotheses, the falsifier, authorship, and a decision log live in one
-        file. Killing a topic is a first-class outcome with a post-mortem — the
-        archive keeps everything tried, and why it stopped.</p></div>
-      <div><span class="n">II — ROUNDS</span>
+        <p>Hypotheses, falsifier, authorship, and a decision log in one file. Killing
+        a topic is a first-class outcome, with a post-mortem.</p></div>
+      <div><span class="n">II · ROUNDS</span>
         <h3>One question, one pull request</h3>
-        <p>A proposer writes the question and runnable code; the data side
-        safety-reviews it, runs it on the real data, and returns aggregates —
-        figures, tables, a written result — into the same thread.</p></div>
-      <div><span class="n">III — GATES</span>
+        <p>The proposer writes a question and runnable code; the data side runs it and
+        returns aggregates — into the same thread.</p></div>
+      <div><span class="n">III · GATES</span>
         <h3>Three doors only humans open</h3>
-        <p>Topic GO/kill and authorship; any code touching real data; and the merge
-        into the permanent record. Agents draft, code, and analyse — people decide.
-        Anyone can halt any round with one label.</p></div>
+        <p>Topic GO/kill, code touching data, and merge. Agents draft; people decide.
+        Anyone can halt a round with one label.</p></div>
     </div>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <p class="kicker">Research lives in private repositories; what appears here is
-    what each project approved for public display. <em>Display only</em> means look
-    but don't join; <em>open to applications</em> means there's a door — knock.</p>
+    <p class="kicker">Research lives in private repos; cards show only what each project
+    approved. <em>Display only</em> = look, don't join. <em>Open to applications</em> =
+    there's a door — knock.</p>
     <div class="grid">
 {{CARDS}}
     </div>
   </section>
 
   <section id="notices">
-    <h2>The notice board</h2>
+    <h2>The board</h2>
     <p class="kicker">Collaborations start with a match: someone holds data, someone
-    else holds the question it deserves. The board carries two kinds of notice —
-    <strong>offering</strong> (I hold data, a licence, compute, or methods) and
-    <strong>seeking</strong> (I need them). It does the introductions; the details
-    happen behind the door.</p>
-    <p class="kicker"><strong>A notice is a silhouette.</strong> The form only has
-    coarse fields — topic area, data shape, order of magnitude, period, terms — so
-    there is structurally no room to over-disclose: nothing on this board could be
-    copied, only recognised. Detail follows the same boundary as the data itself:
-    the public sees the silhouette, a project's trust circle sees the schema, the
-    data never leaves its owner's machine. Every notice carries an expiry date and
-    drops off the board automatically — posting is a light, reversible act.</p>
+    holds the question it deserves. <strong>Offering</strong> (I have data, a licence,
+    compute, methods) and <strong>seeking</strong> (I need them).</p>
+    <p class="kicker"><strong>A notice is a silhouette.</strong> The form is coarse by
+    design — nothing here can be copied, only recognised. Detail follows the data's own
+    boundary; every notice expires and drops off automatically.</p>
     <div class="grid">
 {{NOTICES}}
     </div>
-    <p style="margin-top:1.2rem"><strong>Post one:</strong> members open a pull
-    request against <a href="https://github.com/republic-of-letters/showcase/blob/main/notices.yaml">notices.yaml</a>;
-    anyone else can use the
-    <a href="https://github.com/republic-of-letters/showcase/issues/new/choose">notice form</a>
-    and a maintainer carries it in. <strong>Answer one:</strong> contact the poster if
-    a handle is given, or open an issue naming the notice's id — anonymous posters
-    watch the board and will reach out to you.</p>
+    <p style="margin-top:1.3rem"><strong>Post one:</strong> members PR against
+    <a href="https://github.com/republic-of-letters/showcase/blob/main/notices.yaml">notices.yaml</a>;
+    anyone else uses the
+    <a href="https://github.com/republic-of-letters/showcase/issues/new/choose">notice form</a>.
+    <strong>Answer one:</strong> contact the handle, or open an issue naming its id —
+    anonymous posters watch the board and reach out.</p>
   </section>
 
   <section id="join">
     <h2>How to participate</h2>
     <ol class="journey">
       <li><h3>Look around</h3>
-        <p>Browse the projects and the notice board above, then
-        <a href="letter/">read one letter</a> — five minutes, and you'll know
-        exactly what working here feels like.</p></li>
+        <p>Browse the projects and the board, then <a href="letter/">read a letter</a> —
+        five minutes tells you exactly what this feels like.</p></li>
       <li><h3>Pick your door</h3>
         <p><a href="https://github.com/republic-of-letters/showcase/issues/new/choose">Apply
-        to join</a> a project marked <em>open to applications</em>, telling its lead who
-        you are and what you bring — an idea, code skills, data, compute, or a licence.
-        Or <a href="https://github.com/republic-of-letters/showcase/issues/new/choose">propose
-        a new project</a>: a question, a falsifier, a data plan, and at least one
+        to a project</a>, or propose one: a question, a falsifier, a data plan, one
         committed collaborator.</p></li>
       <li><h3>Onboard — you and your agent</h3>
-        <p>The onboarding guide takes you from zero (no GitHub account) to a working
-        setup, and is written for your AI agent to execute. It ends with a
-        <em>drill</em>: one practice round, end to end, so the loop is proven before
-        real work depends on it.</p></li>
+        <p>The guide takes you from no account to working, written for your AI agent.
+        It ends with a <em>drill</em>: one practice round, end to end.</p></li>
       <li><h3>Work in rounds</h3>
-        <p>Propose questions with runnable code; the data side runs them and returns
-        results into the same thread. Iterate, disagree, converge — everything in
-        writing, everything reviewable.</p></li>
-      <li><h3>Decide at the gates, publish through the record</h3>
-        <p>Humans call GO/kill, approve runs, and merge. What survives all three
-        gates becomes the permanent archive — and, if the project chooses, a card
-        and its outputs on this page.</p></li>
+        <p>Propose code; results come back in-thread. Iterate, disagree, converge —
+        all in writing.</p></li>
+      <li><h3>Decide at the gates</h3>
+        <p>Humans call GO, approve runs, and merge. What survives becomes the archive —
+        and, if you choose, a card here.</p></li>
     </ol>
-    <p><strong>Running your own?</strong> The whole machinery is a template — one
-    command creates a new project with the protocol, safety tooling, and onboarding
-    included:</p>
+    <p style="margin-top:0.5rem"><strong>Running your own?</strong> The whole thing is
+    a template:</p>
     <p><code>gh repo create &lt;owner&gt;/&lt;name&gt; --template republic-of-letters/protocol --private</code></p>
+    <p><a class="cta" href="https://github.com/republic-of-letters/showcase/issues/new/choose">Apply, propose, or post a notice →</a></p>
   </section>
 
   <section id="trust">
     <h2>What you can trust</h2>
-    <p class="kicker">Trust here is a property of the pipeline, not a promise.
-    Every published artifact carries its provenance:</p>
+    <p class="kicker">Trust here is a property of the pipeline, not a promise. Every
+    published artifact carries its provenance:</p>
     <div class="scroll"><table>
       <tr><th>Level</th><th>Meaning</th></tr>
       <tr><td><code>ran-on-real-data</code></td><td>Produced by the data side on the
@@ -286,48 +252,37 @@
   <section id="faq">
     <h2>Questions people ask</h2>
     <details><summary>Do I need to know git or GitHub?</summary>
-      <p>Barely. The onboarding guide is written for your AI agent to execute; the
-      human steps are creating an account and clicking a few buttons. If you can
-      answer email, you can work here.</p></details>
+      <p>Barely. The onboarding guide is written for your agent to execute; your part
+      is an account and a few clicks. If you can answer email, you can work here.</p></details>
     <details><summary>Is my data safe?</summary>
-      <p>Your data never leaves your machine. You (or your side) run every analysis
-      yourself, after an automated scan and a human read of the code — sandboxed,
-      read-only, no network. Repositories carry only aggregate results, and CI
-      rejects anything that looks like raw data.</p></details>
+      <p>It never leaves your machine. You run every analysis yourself, after a scan and
+      a human read — sandboxed, read-only, no network. Repos carry only aggregates.</p></details>
     <details><summary>What if someone steals my idea?</summary>
-      <p>Projects live in private trust circles — nothing is visible outside the
-      member list until you choose to publish. Inside, every hypothesis, decision,
-      and round is timestamped in version control, which makes priority provable
-      rather than arguable. And the notice board only ever shows silhouettes —
-      there is nothing on it worth stealing.</p></details>
+      <p>Projects are private trust circles — invisible outside the member list until you
+      publish. Inside, every hypothesis and round is timestamped, so priority is provable.
+      The board shows only silhouettes; there's nothing on it worth stealing.</p></details>
     <details><summary>What if I need to leave mid-project?</summary>
-      <p>Leaving is a recorded decision, not a scene. Your merged contributions stay
-      attributed to you in the archive, the authorship rule written at GO still
-      governs work you contributed to, and you take a complete copy of the archive
-      with you.</p></details>
+      <p>Leaving is a recorded decision. Your merged contributions stay attributed to you,
+      the authorship rule still governs work you touched, and you take a full copy of the
+      archive.</p></details>
     <details><summary>What AI agent do I need?</summary>
-      <p>Any capable coding agent — Claude Code, Codex, or similar. The protocol is
-      agent-agnostic: it's a set of files and commands any competent agent can
-      follow. You can even work without one, though you'd be doing the legwork
-      yourself.</p></details>
-    <details><summary>Who owns the results? Who gets authorship?</summary>
-      <p>The humans. Authorship — name order or the rule that decides it — is agreed
-      in writing no later than the moment a topic gets its GO, and data/compute
-      contributions count. Agents are pens, not authors.</p></details>
+      <p>Any capable coding agent — Claude Code, Codex, similar. The protocol is
+      agent-agnostic. You can even work without one; you'd just do the legwork.</p></details>
+    <details><summary>Who gets authorship?</summary>
+      <p>The humans. Name order is agreed in writing before a topic's GO, and data/compute
+      count. Agents are pens, not authors.</p></details>
     <details><summary>Who can see my project?</summary>
-      <p>You choose: <em>display only</em> (a title and approved outputs on this
-      page), <em>open to applications</em> (the above plus a way in), or fully
-      <em>open</em>. The research repository itself stays private to invited members
-      unless you decide otherwise.</p></details>
+      <p>You choose: <em>display only</em>, <em>open to applications</em>, or fully
+      <em>open</em>. The repo stays private to invited members unless you decide otherwise.</p></details>
     <details><summary>What does it cost?</summary>
-      <p>Nothing. The space runs on plain GitHub — free for private research
-      repositories — and the protocol is open source (MIT).</p></details>
+      <p>Nothing. Plain GitHub — free for private research repos — and the protocol is
+      open source (MIT).</p></details>
   </section>
 
   <footer>
-    Named for the 17th-century scholars' network that did science by mail.
-    The protocol is open — <a href="https://github.com/republic-of-letters/protocol">read
-    it, reuse it, improve it</a>. · <a href="zh/">中文</a>
+    Named for the 17th-century scholars' network that did science by mail. The protocol
+    is open — <a href="https://github.com/republic-of-letters/protocol">read it, reuse
+    it, improve it</a>. · <a href="zh/">中文</a>
   </footer>
 </main>
 </body>
