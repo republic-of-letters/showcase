@@ -1,0 +1,42 @@
+name: Apply to join a project
+description: For projects marked "open to applications" on the showcase.
+title: "[join] <project id> — <your name>"
+labels: ["join-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The project's lead reads this and decides — membership is a human gate.
+        Everything you write here is public; keep private details for the
+        follow-up conversation.
+  - type: input
+    id: project
+    attributes:
+      label: Project
+      placeholder: the card's id or title on the showcase
+    validations:
+      required: true
+  - type: textarea
+    id: who
+    attributes:
+      label: Who you are
+      placeholder: Name, role (faculty / student / other), institution, GitHub handle. Students — name your mentor if you have one.
+    validations:
+      required: true
+  - type: textarea
+    id: bring
+    attributes:
+      label: What you bring
+      placeholder: An idea or hypothesis, code skills, data you have the right to share, compute, a data licence (WRDS etc.), domain expertise…
+    validations:
+      required: true
+  - type: dropdown
+    id: agent
+    attributes:
+      label: Do you work with an AI agent?
+      options:
+        - Yes — set up and ready
+        - Yes — but I'll need the onboarding guide
+        - Not yet
+    validations:
+      required: true

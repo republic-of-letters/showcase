@@ -1,0 +1,26 @@
+# The project registry — the single source the showcase site is built from.
+#
+# Adding or changing a card here is a PUBLICATION: everything in this file is
+# public on the internet. A card enters via pull request, approved by the
+# project's lead — that PR is the merge gate for the export. Never put
+# unpublished results, data details, or member lists a project hasn't
+# approved for display.
+#
+# Card schema (all research projects live in their own private repos;
+# this file only carries what they chose to show):
+#
+#   - id: short-slug                  # unique, stable
+#     title: Human-readable title
+#     blurb: >-
+#       One or two sentences, written for someone outside the project.
+#     status: active                  # incubating | active | writing | published | archived
+#     tier: apply-to-join             # display-only | apply-to-join | open
+#     since: 2026-07                  # YYYY-MM
+#     people: 3                       # member count (humans; each works with an agent)
+#     contact: "@handle"              # required for apply-to-join
+#     outputs:                        # optional — gate-approved artifacts only
+#       - label: Working paper
+#         url: https://example.org
+#     repo: https://github.com/...    # only for tier: open
+
+projects: []

@@ -1,0 +1,39 @@
+name: Propose a project
+description: A research question that could become a project in this space.
+title: "[proposal] "
+labels: ["project-proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A project needs a question, at least one committed collaborator, and a
+        data plan. If it flies, it gets its own private repo created from the
+        [protocol template](https://github.com/republic-of-letters/protocol)
+        and a card on the showcase.
+  - type: input
+    id: question
+    attributes:
+      label: The research question, in one line
+    validations:
+      required: true
+  - type: textarea
+    id: pitch
+    attributes:
+      label: Why it matters and what would kill it
+      placeholder: The contribution in a short paragraph — and the falsifier: what result would end this project?
+    validations:
+      required: true
+  - type: textarea
+    id: data
+    attributes:
+      label: Data plan
+      placeholder: What data, who holds it, under what terms. Data never enters a repo — one side runs it, results come back as aggregates.
+    validations:
+      required: true
+  - type: textarea
+    id: team
+    attributes:
+      label: Who's in
+      placeholder: You + anyone already committed. Faculty/student, institution, GitHub handles.
+    validations:
+      required: true
