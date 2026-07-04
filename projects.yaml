@@ -11,8 +11,11 @@
 #
 #   - id: short-slug                  # unique, stable
 #     title: Human-readable title
+#     title_zh: 中文标题               # optional — the zh page falls back to title
 #     blurb: >-
 #       One or two sentences, written for someone outside the project.
+#     blurb_zh: >-                    # optional — the zh page falls back to blurb
+#       一两句面向项目外读者的介绍。
 #     status: active                  # incubating | active | writing | published | archived
 #     tier: apply-to-join             # display-only | apply-to-join | open
 #     since: 2026-07                  # YYYY-MM
