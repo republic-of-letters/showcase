@@ -1,0 +1,19 @@
+[
+  {
+    "id": "offering-polymarket-microstructure",
+    "kind": "offering",
+    "what": "data",
+    "area": "Prediction-market microstructure (Polymarket)",
+    "area_zh": "预测市场微观结构（Polymarket）",
+    "shape": "transaction-level panel + settled-market cross-section",
+    "shape_zh": "交易级面板 + 已结算市场截面",
+    "scale": "~1e9 fills · ~1e6 markets",
+    "period": "2020–2026",
+    "terms": "can-run",
+    "seeking": "Hypotheses and estimation ideas across microstructure, trader behaviour, and event pricing. I hold the data and compute, and run the analysis as the project's Runner.",
+    "seeking_zh": "征微观结构、交易者行为、事件定价方向的假设与估计思路；本人持有数据与算力，以执行方（Runner）身份运行分析。",
+    "contact": "@alonegg",
+    "posted": "2026-07",
+    "expires": "2027-01"
+  }
+]
