@@ -1,0 +1,37 @@
+# The notice board — silhouettes only.
+#
+# A notice advertises a match-making intent: OFFERING (I hold data / a licence /
+# compute / methods) or SEEKING (I need them). The schema is deliberately coarse —
+# there is no field for table names, variable lists, or source specifics, and that
+# is the point: nothing on the board can be copied, only recognised. Detail is
+# disclosed later, inside a project's trust circle, following the same boundary
+# as the data itself.
+#
+# Rules:
+#   - A notice is a PUBLICATION: it enters by pull request, and everything in it
+#     is public on the internet.
+#   - `expires` is REQUIRED (YYYY-MM). The build drops expired notices
+#     automatically — renew by PR if still relevant.
+#   - `contact` is a GitHub handle, or the word `watch` for an anonymous notice:
+#     responders open an issue naming the notice id, and the poster reaches out
+#     privately.
+#
+# Schema:
+#   - id: offering-<slug> | seeking-<slug>    # unique, stable
+#     kind: offering                          # offering | seeking
+#     what: data                              # data | licence | compute | methods | ideas
+#     area: Prediction-market microstructure  # topic area, one line
+#     area_zh: 预测市场微观结构                 # optional; zh page falls back to area
+#     shape: transaction-level panel          # coarse: panel / cross-section / text corpus / network / ...
+#     scale: ~1e8 rows                        # order of magnitude only
+#     period: 2020–2026
+#     terms: can-run                          # data/licence only: can-run | can-share | licence-bound
+#     seeking: >-                             # what you want in return, one or two lines
+#       Hypotheses and estimation ideas; will serve as the project's Runner.
+#     seeking_zh: >-                          # optional
+#       征假设与估计思路；本人担任项目执行方。
+#     contact: "@handle"                      # or: watch (anonymous)
+#     posted: 2026-07
+#     expires: 2027-01                        # required
+
+notices: []

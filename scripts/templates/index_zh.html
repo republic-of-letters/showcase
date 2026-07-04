@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>文人共和国 · Republic of Letters</title>
+<meta name="description" content="一个人与 AI 代理以通信方式合作做实证研究的空间——同一套协议，三道由人把守的闸门。">
+<style>{{CSS}}</style>
+</head>
+<body>
+<main>
+  <nav>
+    <a href="#why">优势</a><a href="#modes">合作模式</a><a href="#projects">项目</a>
+    <a href="#notices">布告栏</a><a href="#join">如何参与</a><a href="#faq">常见问题</a>
+    <a href="letter/">读一封信</a>
+    <a class="lang" href="../">English</a>
+  </nav>
+
+  <header>
+    <div class="seal">Respublica Literaria · est. 2026</div>
+    <h1>文人共和国</h1>
+    <p class="lead">一个教师、学生和他们的 AI 代理以「通信」方式合作做实证研究的空间。
+    问题与代码寄出，结果寄回——每一步都是档案里一封可审阅的信。名字取自十七世纪
+    靠书信往来做科学的学者网络（Republic of Letters）。</p>
+    <p class="path">理解这里需要：<b>30 秒</b>——下面这张图 ·
+    <b>3 分钟</b>——读完本页 · <b>5 分钟</b>——<a href="letter/">读一封信</a> ·
+    <b>15 分钟</b>——<a href="https://github.com/republic-of-letters/protocol">翻协议</a> ·
+    <b>30 分钟</b>——做完演练，即完成入职。</p>
+    <svg class="loop" viewBox="0 0 760 252" role="img" aria-label="循环图：提议方以 Pull Request 寄出问题与代码；执行方在从不移动的数据上运行，寄回聚合结果；三道人闸把守整个往来。">
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/>
+        </marker>
+      </defs>
+      <rect x="505" y="45" width="235" height="160" rx="14" fill="none" stroke="var(--muted)" stroke-dasharray="5 5"/>
+      <rect x="25" y="70" width="200" height="90" rx="10" fill="var(--card)" stroke="var(--line)"/>
+      <text x="125" y="108" text-anchor="middle" class="t">提议方</text>
+      <text x="125" y="130" text-anchor="middle" class="s">想法 + 代码</text>
+      <rect x="525" y="70" width="195" height="90" rx="10" fill="var(--card)" stroke="var(--line)"/>
+      <text x="622" y="108" text-anchor="middle" class="t">执行方</text>
+      <text x="622" y="130" text-anchor="middle" class="s">数据 + 算力</text>
+      <text x="622" y="192" text-anchor="middle" class="s">数据不出这条虚线</text>
+      <path d="M225,95 L521,95" fill="none" stroke="var(--accent)" marker-end="url(#arr)"/>
+      <text x="373" y="80" text-anchor="middle" class="s">一封信：问题 + 可运行的代码（一个 Pull Request）</text>
+      <path d="M525,140 L229,140" fill="none" stroke="var(--accent)" marker-end="url(#arr)"/>
+      <text x="373" y="166" text-anchor="middle" class="s">回信：图与表——只有聚合结果，从不含数据</text>
+      <text x="380" y="240" text-anchor="middle" class="gatecap">三道只有人能开的闸：课题 · 数据 · 合并</text>
+    </svg>
+  </header>
+
+  <section id="doors">
+    <h2>你是哪一种人？</h2>
+    <div class="grid">
+      <article class="card door">
+        <h3>「我有数据」</h3>
+        <p>数据从不移动。合作者的代码寄到你这里，你审查后自己运行，寄回去的只有聚合结果。</p>
+        <ol>
+          <li>读一读<a href="#modes">「数据方 × 想法方」</a>这种模式</li>
+          <li>在<a href="#notices">布告栏</a>登一张「提供」布告——只登剪影，不登 schema</li>
+          <li>有人敲门时，以执行方（Runner）身份开一个项目</li>
+        </ol>
+      </article>
+      <article class="card door">
+        <h3>「我有想法，没有数据」</h3>
+        <p>这块布告栏上，可能正有一份数据在等你这个问题。</p>
+        <ol>
+          <li>扫一遍<a href="#notices">布告栏</a>和<a href="#projects">项目列表</a></li>
+          <li>应答一张布告，或者<a href="https://github.com/republic-of-letters/showcase/issues/new/choose">申请加入项目</a></li>
+          <li>提出你的第一个 round——代码会走过去，你不需要拿到数据</li>
+        </ol>
+      </article>
+      <article class="card door">
+        <h3>「我是学生」</h3>
+        <p>在护栏之内做真实研究。每一份合并的贡献都永久署在你名下，任何人都能核查。</p>
+        <ol>
+          <li>挑一个<a href="#projects">开放申请</a>的项目——复现是最理想的第一份贡献</li>
+          <li>带上你的 AI 代理入职，通过演练（约 30 分钟）</li>
+          <li>提出 round；每次合并由导师共同把关</li>
+        </ol>
+      </article>
+      <article class="card door">
+        <h3>「我们已经有团队了」</h3>
+        <p>跳过相识环节——直接拿走整套机制。</p>
+        <ol>
+          <li><code>gh repo create &lt;owner&gt;/&lt;name&gt; --template republic-of-letters/protocol --private</code></li>
+          <li>十分钟走完 <code>SETUP.md</code></li>
+          <li>开第一个课题；每位成员做一次演练</li>
+        </ol>
+      </article>
+    </div>
+  </section>
+
+  <section id="why">
+    <h2>为什么用这种方式做研究</h2>
+    <p class="kicker">跨机构的实证合作通常卡在四件事上：数据传不出去、别人的代码不敢跑、
+    合作过程没有记录、署名谈不拢。这个空间从结构上把四件事都解决掉。</p>
+    <div class="cols">
+      <div><span class="n">数据</span>
+        <h3>数据从不离开你的机器</h3>
+        <p>合作者把代码寄给你；你审查之后自己运行；寄回去的只有聚合结果——图、表、
+        文字结论。不需要数据传输协议，不会有数据副本流散在外。CI 会物理拦截任何
+        试图进入仓库的原始数据。</p></div>
+      <div><span class="n">代理</span>
+        <h3>为智能体时代而设计</h3>
+        <p>每位成员都带着自己的 AI 代理工作。协议就是写给代理「执行」的——精确的命令、
+        文件契约、硬边界——代理以机器速度承担跑腿的部分，而每一个要紧的决定都留在人手里。</p></div>
+      <div><span class="n">记录</span>
+        <h3>全程留痕，包括失败</h3>
+        <p>每个问题、每次运行、每个决定、每条死路，都是版本库里可以逐行对比的文件。
+        新加入的合作者——或者新开的代理会话——都能完整重建历史。被否掉的方向有
+        「尸检报告」，不会无声消失。</p></div>
+      <div><span class="n">信任</span>
+        <h3>信任来自结构，不靠人品</h3>
+        <p>任何代码在触碰真实数据之前，都要先通过自动扫描「加上」人工阅读；任何结果
+        在进入档案之前，都要双方的人都点头。每个公开发表的数字都带着自己的来源等级。</p></div>
+      <div><span class="n">署名</span>
+        <h3>署名先小人后君子</h3>
+        <p>作者排序——或者决定排序的规则——最迟在课题立项（GO）那一刻白纸黑字写下，
+        数据和算力的贡献都计入。拖着不谈在这里是违反协议，而不是常态。</p></div>
+      <div><span class="n">成本</span>
+        <h3>零基础设施，零锁定</h3>
+        <p>就是普通的 GitHub：免费、熟悉、耐用。一条命令创建一个项目；哪天要走，
+        完整档案随身带走。整个流程里没有任何私有依赖。</p></div>
+    </div>
+  </section>
+
+  <section id="modes">
+    <h2>支持哪些合作模式</h2>
+    <p class="kicker">一套协议，多种形态。下面每种模式用的都是同一套机制——课题、
+    round、人闸——只是为不同的合作组合方式排布。</p>
+    <div class="grid">
+      <article class="card mode">
+        <h3>合著论文</h3>
+        <p>最经典的单元。一个课题（topic）就是一篇候选论文：试探性 round 验证可行性，
+        GO 的同时定署名，主体分析 round 产出结果，合并档案就是这篇论文完整的审计线索。</p>
+        <p class="who">适合：2–5 位有共同问题的研究者。</p>
+      </article>
+      <article class="card mode">
+        <h3>数据方 × 想法方</h3>
+        <p>一方有数据和算力，另一方有假设和代码——这是本空间的创始形态。受限授权数据
+        （WRDS、Compustat 等）也留在持照人自己的机器上，只在衍生表层面做连接。</p>
+        <p class="who">适合：原本没办法坐到一起的数据持有者与方法研究者。</p>
+      </article>
+      <article class="card mode">
+        <h3>课题 / 研究计划</h3>
+        <p>一个立项课题或长期研究议程 = 一个仓库，下辖多个 topic。决策日志让课题有
+        制度性记忆；里程碑就是一个个已合并、任何人都能核查的 round。</p>
+        <p class="who">适合：基金课题、实验室议程、多篇论文的长期合作。</p>
+      </article>
+      <article class="card mode">
+        <h3>学位论文与学生培养</h3>
+        <p>学生提出 round，导师在每次合并时共同把关。学生在护栏之内做真实研究，
+        而合并档案就是这段工作最干净的成长记录。</p>
+        <p class="who">适合：导师与他们的研究生、本科生。</p>
+      </article>
+      <article class="card mode">
+        <h3>复现与稳健性检验</h3>
+        <p>把已有分析作为 round 重新独立执行——同样的问题，独立的运行。复现成功的
+        结果获得 <code>replicated</code> 来源等级。这也是新成员最理想的第一份贡献。</p>
+        <p class="who">适合：刚加入项目的学生；投稿前想把结果焊牢的团队。</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>运作方式</h2>
+    <div class="cols">
+      <div><span class="n">一 · 课题</span>
+        <h3>一篇候选论文，一个课题</h3>
+        <p>假设、证伪条件、署名约定和决策日志都在一个文件里。杀掉一个课题是正式的
+        产出，附带尸检报告——档案会记住试过的一切，以及为什么停下。</p></div>
+      <div><span class="n">二 · ROUND</span>
+        <h3>一个问题，一个 Pull Request</h3>
+        <p>提议方写下问题和可运行的代码；数据方做安全审查后在真实数据上运行，把聚合
+        结果——图、表、文字结论——寄回同一个线程。</p></div>
+      <div><span class="n">三 · 人闸</span>
+        <h3>三扇只有人能开的门</h3>
+        <p>课题的 GO/终止与署名；任何触碰真实数据的代码；以及合并进永久档案。代理起草、
+        写码、分析——人做决定。任何人都能用一个标签叫停任何 round。</p></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>项目</h2>
+    <p class="kicker">研究本身在私有仓库里进行；这里展示的是各项目批准公开的部分。
+    「仅展示」意味着只看不进；「开放申请」意味着有一扇门——去敲。</p>
+    <div class="grid">
+{{CARDS}}
+    </div>
+  </section>
+
+  <section id="notices">
+    <h2>布告栏</h2>
+    <p class="kicker">合作始于撮合：有人握着数据，有人握着这份数据配得上的问题。
+    布告分两种——<strong>提供</strong>（我有数据、授权、算力或方法）和
+    <strong>征求</strong>（我需要它们）。布告栏负责引见，细节在门后谈。</p>
+    <p class="kicker"><strong>布告只登剪影。</strong>表单只有粗粒度字段——主题领域、
+    数据形态、数量级、年代、条款——结构上就没有过度披露的余地：这块板上没有任何
+    能被抄走的东西，只有能被认出的轮廓。细节的披露沿用数据本身的边界：公众看剪影，
+    项目信任圈看 schema，数据永远留在持有人的机器上。每张布告都有有效期，到期自动
+    下架——登记是一个轻的、可反悔的动作。</p>
+    <div class="grid">
+{{NOTICES}}
+    </div>
+    <p style="margin-top:1.2rem"><strong>登一张：</strong>成员对
+    <a href="https://github.com/republic-of-letters/showcase/blob/main/notices.yaml">notices.yaml</a>
+    提 Pull Request；其他人可以用
+    <a href="https://github.com/republic-of-letters/showcase/issues/new/choose">布告表单</a>，
+    由维护者代为登入。<strong>应答一张：</strong>布告留了联系方式就直接联系；匿名布告
+    则开一个 issue 写明布告编号——发布者在暗处看着布告栏，会主动找你。</p>
+  </section>
+
+  <section id="join">
+    <h2>如何参与</h2>
+    <ol class="journey">
+      <li><h3>先逛逛</h3>
+        <p>看看上面的项目和布告栏，然后<a href="letter/">读一封信</a>——五分钟，
+        你就知道在这里工作是什么感觉。</p></li>
+      <li><h3>选一扇门</h3>
+        <p>对标着「开放申请」的项目，<a href="https://github.com/republic-of-letters/showcase/issues/new/choose">提交加入申请</a>，
+        告诉项目负责人你是谁、带来什么——想法、代码能力、数据、算力或者数据授权。
+        或者<a href="https://github.com/republic-of-letters/showcase/issues/new/choose">提议一个新项目</a>：
+        一个问题、一个证伪条件、一份数据计划，和至少一位已经确定加入的合作者。</p></li>
+      <li><h3>入职——你和你的代理一起</h3>
+        <p>入职指南把你从零（连 GitHub 账号都没有）带到可以工作的状态，而且是写给你的
+        AI 代理执行的。最后一步是一次「演练」：完整走一遍练习 round，在真实工作开始前
+        把整个流程验证一遍。</p></li>
+      <li><h3>以 round 的方式工作</h3>
+        <p>带着可运行的代码提出问题；数据方运行后把结果寄回同一线程。迭代、争论、收敛——
+        一切都落在文字上，一切都可审阅。</p></li>
+      <li><h3>在闸口决策，经档案发表</h3>
+        <p>人来判 GO/终止、批准运行、决定合并。通过全部三道闸的成果进入永久档案——
+        如果项目愿意，也会成为这个页面上的一张卡片和它的公开成果。</p></li>
+    </ol>
+    <p><strong>想自己开一个？</strong>整套机制就是一个模板——一条命令创建新项目，
+    协议、安全工具、入职流程全部内置：</p>
+    <p><code>gh repo create &lt;owner&gt;/&lt;name&gt; --template republic-of-letters/protocol --private</code></p>
+  </section>
+
+  <section id="trust">
+    <h2>可以相信什么</h2>
+    <p class="kicker">这里的信任是流水线的属性，不是口头承诺。每个公开发表的产物都
+    带有来源等级：</p>
+    <div class="scroll"><table>
+      <tr><th>等级</th><th>含义</th></tr>
+      <tr><td><code>ran-on-real-data</code></td><td>由数据方在真实数据上跑出，经过安全闸，
+        双方的人共同合并进档案。</td></tr>
+      <tr><td><code>replicated</code></td><td>在上一条基础上，发表前由第二位成员独立
+        复跑确认。</td></tr>
+      <tr><td><code>SYNTHETIC</code></td><td>合成数据上的冒烟测试输出。醒目标注，
+        不可引用，永远不会出现在本页。</td></tr>
+    </table></div>
+  </section>
+
+  <section id="faq">
+    <h2>常见问题</h2>
+    <details><summary>我需要会 git 或 GitHub 吗？</summary>
+      <p>基本不用。入职指南是写给你的 AI 代理执行的；人需要做的只是注册账号、点几个
+      按钮。会收发邮件，就能在这里工作。</p></details>
+    <details><summary>我的数据安全吗？</summary>
+      <p>数据从不离开你的机器。每次分析都由你（或你这一侧）亲自运行，且在运行前经过
+      自动扫描和人工读码——沙箱、只读、无网络。仓库只承载聚合结果，CI 会拒绝任何
+      看起来像原始数据的东西。</p></details>
+    <details><summary>我的想法被人拿走怎么办？</summary>
+      <p>项目在私有信任圈里进行——在你选择发表之前，圈外什么都看不见。圈内，每个假设、
+      每个决定、每个 round 都在版本库里带着时间戳，优先权是可证明的，不是打嘴仗的。
+      而布告栏上只有剪影——那上面没有任何值得偷的东西。</p></details>
+    <details><summary>中途要退出怎么办？</summary>
+      <p>退出是一个被记录的决定，不是一场戏。你已合并的贡献永远署在你名下；GO 时写下的
+      署名规则继续约束你参与过的工作；你还可以带走一份完整的档案副本。</p></details>
+    <details><summary>需要什么样的 AI 代理？</summary>
+      <p>任何有编码能力的代理——Claude Code、Codex 或同类产品。协议与具体代理无关：
+      它只是一组任何称职的代理都能照做的文件和命令。没有代理也能参与，只是跑腿的活
+      得自己干。</p></details>
+    <details><summary>成果归谁？署名怎么算？</summary>
+      <p>归人。署名——排序或决定排序的规则——最迟在课题 GO 时书面约定，数据和算力
+      贡献都计入。代理是笔，不是作者。</p></details>
+    <details><summary>谁能看到我的项目？</summary>
+      <p>你自己选：「仅展示」（本页只出现标题和批准公开的成果）、「开放申请」（在此
+      基础上多一扇门）、或者「完全开放」。研究仓库本身始终只对受邀成员可见，除非你
+      主动决定公开。</p></details>
+    <details><summary>要花钱吗？</summary>
+      <p>不用。整个空间跑在普通的 GitHub 上——私有研究仓库免费——协议本身开源（MIT）。</p></details>
+  </section>
+
+  <footer>
+    名字取自十七世纪靠书信做科学的学者网络。协议是开放的——
+    <a href="https://github.com/republic-of-letters/protocol">欢迎阅读、复用、改进</a>。
+    · <a href="../">English</a>
+  </footer>
+</main>
+</body>
+</html>

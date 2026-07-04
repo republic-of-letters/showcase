@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>读一封信 · 文人共和国</title>
+<meta name="description" content="完整读一个协作 round——理解「以通信做研究」最快的方式。">
+<style>{{CSS}}</style>
+</head>
+<body>
+<main>
+  <nav>
+    <a href="../">← 文人共和国</a>
+    <a class="lang" href="../../letter/">English</a>
+  </nav>
+
+  <article class="letter">
+    <header>
+      <div class="seal">一个 round，从头到尾</div>
+      <h1>读一封信</h1>
+      <p class="lead">理解这个空间最快的方式，是完整读一次往来。下面是
+      <strong>R000</strong>——随协议一起发布的完工示例。它的数据是刻意合成的（所以在
+      任何机器上都能跑），但它的形态和一个真实 round 一模一样。等某个进行中的项目批准
+      公开一次真实往来，这一页就会换上真信。</p>
+    </header>
+
+    <section>
+      <span class="part">第一部分 · 提问</span>
+      <h2>一个问题，装在一个文件夹里，放在一个分支上</h2>
+      <p>一个 round 始于有人搭好文件夹、填好 <code>ASK.md</code>。开头是一个机器可读的
+      「信封」：</p>
+      <pre><code>round:    R000
+title:    Worked example — mean outcome by group
+topic:    T00
+kind:     analysis
+proposer: "@example-proposer"
+data:     []          # 真实 round 会在这里列出它触碰的表</code></pre>
+      <div class="note"><b>为什么重要：</b>在读任何一行代码之前，数据方已经知道这个
+      round 属于哪个课题、是什么类型、影响范围有多大——会碰到哪几张表。</div>
+      <p>然后是提问本身，用平实的文字：</p>
+      <blockquote><strong>问题。</strong>各组的平均结果 <code>y</code> 是多少？组间的
+      离散程度如何比较？<br><br>
+      <strong>预期产出。</strong>一张表（<code>group, n, mean_y, sd_y</code>）、一张带
+      零参考线的均值柱状图，和一段文字解读。</blockquote>
+      <div class="note"><b>契约所在：</b>「预期产出」就是完工的定义。执行方跑到这些东西
+      存在为止——不多，也不少。野心放在问题里，边界写在这里。</div>
+    </section>
+
+    <section>
+      <span class="part">第二部分 · 代码</span>
+      <h2>可运行、有边界、不知道数据在哪</h2>
+      <p>提议方附上 <code>run.py</code>。它永远不知道数据的真实位置——它读一个由数据方
+      在运行时设置的环境变量；它只能写进自己的 <code>./result/</code> 文件夹，别处一律
+      不行：</p>
+      <pre><code>RESULT = Path(__file__).parent / "result"
+
+def load_demo():
+    """合成 (group, y) 数据，确定性（seed 42）。"""
+    rng = random.Random(42)
+    ...
+
+# 真实 round 读的是真实的表：
+#   DATA_ROOT = Path(os.environ["DATA_ROOT"])
+#   df = pl.read_parquet(DATA_ROOT / "&lt;table&gt;.parquet")</code></pre>
+      <div class="note"><b>这段代码要触碰真实数据之前</b>，先过一遍自动扫描——网络访问、
+      子进程、文件改写、读取密钥、运行时装包，全都会被标出——然后数据方的人还要亲自
+      读一遍。之后才在沙箱里运行：非 root、数据只读、无网络。这就是三道人闸中的第二道：
+      <em>数据闸</em>。</div>
+    </section>
+
+    <section>
+      <span class="part">第三部分 · 回信</span>
+      <h2>聚合结果回到同一个线程</h2>
+      <p>数据方运行代码，把结果——文字结论、图、小表——推回同一个 Pull Request。
+      这一封的开头，是整个协议里嗓门最大的一条规则：</p>
+      <div class="banner">SYNTHETIC — smoke test, do not cite（合成数据——冒烟测试，不可引用）</div>
+      <div class="note"><b>为什么这么大声：</b>没跑过真实数据的输出必须一眼可辨——因为
+      它差点就不是这样：早期部署中，一批没有标注的冒烟测试表格险些被当成真实结果合并。
+      这里的规则是伤疤，不是理论。真实 round 里，数据方的运行结果会<em>替换</em>掉这个
+      占位输出。</div>
+      <blockquote><strong>结论。</strong>平均结果 <code>y</code> 从 −0.031（charlie 组）
+      到 +0.100（foxtrot 组）不等，六组的离散程度几乎相同（sd ≈ 0.15）——这是构造
+      使然。</blockquote>
+      <figure>
+        <img src="../../assets/letter/y_by_group.png" alt="柱状图：各组的平均结果 y，带零参考线" width="910" height="520">
+        <figcaption>寄回来的图——<code>result/figures/y_by_group.png</code>，
+        提交在 round 的文件夹里。</figcaption>
+      </figure>
+      <blockquote><strong>局限。</strong>全部：数据是合成的。本 round 只演示格式。</blockquote>
+      <div class="note"><b>值得注意的习惯：</b>每封回信都必须写明它<em>不能</em>证明什么。
+      诚实的局限说明是契约的一部分，不是客套。</div>
+    </section>
+
+    <section>
+      <span class="part">第四部分 · 存档</span>
+      <h2>合并即归档，永久有效</h2>
+      <p>持续检查盯着每一个 round：没有超过几 MB 的文件、没有原始数据格式、目录结构
+      完整。检查全绿、双方的人都满意之后，round 合并——它在 <code>main</code> 上的
+      文件夹从此成为这个问题及其答案的永久、可引用的记录。死路也会合并——作为尸检
+      报告：档案记住试过的一切，以及为什么停下。</p>
+      <div class="note"><b>这就是完整的循环。</b>一个问题、一个文件夹、一个 Pull
+      Request——提问、运行、回信、合并。<a href="https://github.com/republic-of-letters/protocol">协议</a>里
+      其余的一切，都是为这次往来服务的细节。</div>
+      <p style="margin-top:1.4rem"><strong>亲手做一遍：</strong>入职演练会让你（和你的
+      AI 代理）在约 30 分钟内复刻这个 round——见
+      <a href="https://github.com/republic-of-letters/protocol/blob/main/ONBOARDING.md">ONBOARDING.md</a>。
+      原始文件在
+      <a href="https://github.com/republic-of-letters/protocol/tree/main/exchange/R000-example-hello">exchange/R000-example-hello</a>。</p>
+    </section>
+  </article>
+
+  <footer>
+    <a href="../">← 回到文人共和国</a> · <a href="../../letter/">English</a>
+  </footer>
+</main>
+</body>
+</html>

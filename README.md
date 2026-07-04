@@ -8,14 +8,21 @@ Live site: **<https://republic-of-letters.github.io/showcase/>**
 
 ## How this repo works
 
-- [`projects.yaml`](projects.yaml) is the registry: one card per project. The site
-  is rebuilt from it on every push to `main` (see `.github/workflows/pages.yml`).
-- **A card is a publication.** Research projects live in their own private repos;
-  what appears here is only what each project approved for public display. Cards
-  are added and changed **by pull request**, reviewed by the project's lead — the
+- [`projects.yaml`](projects.yaml) is the project registry: one card per project.
+  [`notices.yaml`](notices.yaml) is the **notice board**: OFFERING/SEEKING
+  silhouettes for match-making (coarse fields only — by design there is no room to
+  over-disclose; every notice has a required expiry and drops off automatically).
+  The site is rebuilt from both on every push to `main`
+  (see `.github/workflows/pages.yml`).
+- **A card or notice is a publication.** Research projects live in their own
+  private repos; what appears here is only what each project or member approved
+  for public display. Entries are added and changed **by pull request** — the
   same merge-gate logic the protocol uses everywhere else.
-- Issues on this repo are the front door: propose a project or apply to join one
-  via the [issue forms](../../issues/new/choose).
+- Issues on this repo are the front door: propose a project, apply to join one,
+  or post a notice via the [issue forms](../../issues/new/choose).
+- The site is bilingual (`/` en, `/zh/` 中文) and includes an annotated worked
+  round at `/letter/` — the "read one letter" tour. Cards and notices support
+  optional `*_zh` fields.
 
 ## Project visibility tiers
 

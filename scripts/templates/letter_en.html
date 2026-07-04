@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Read one letter · Republic of Letters</title>
+<meta name="description" content="A complete collaboration round, end to end — the fastest way to understand how research by correspondence works.">
+<style>{{CSS}}</style>
+</head>
+<body>
+<main>
+  <nav>
+    <a href="../">← Republic of Letters</a>
+    <a class="lang" href="../zh/letter/">中文</a>
+  </nav>
+
+  <article class="letter">
+    <header>
+      <div class="seal">One round, end to end</div>
+      <h1>Read one letter</h1>
+      <p class="lead">The fastest way to understand this place is to read one complete
+      exchange. Below is <strong>R000</strong>, the worked example that ships with the
+      protocol — its data is synthetic on purpose, so it runs anywhere, but its shape
+      is exactly what a real round looks like. When a live project approves a real
+      exchange for display, it will take over this page.</p>
+    </header>
+
+    <section>
+      <span class="part">Part 1 — The ask</span>
+      <h2>A question, in a folder, on a branch</h2>
+      <p>A round starts when someone scaffolds a folder and fills in <code>ASK.md</code>.
+      It opens with a machine-readable envelope:</p>
+      <pre><code>round:    R000
+title:    Worked example — mean outcome by group
+topic:    T00
+kind:     analysis
+proposer: "@example-proposer"
+data:     []          # a real round lists the tables it touches</code></pre>
+      <div class="note"><b>Why it matters:</b> before reading a single line of code,
+      the data side knows which topic this serves, what kind of round it is, and its
+      blast radius — exactly which tables it will touch.</div>
+      <p>Then the ask itself, in prose:</p>
+      <blockquote><strong>Question.</strong> What is the mean outcome <code>y</code> by
+      group, and how does its dispersion compare across groups?<br><br>
+      <strong>Expected output.</strong> A table (<code>group, n, mean_y, sd_y</code>),
+      a bar chart of mean <code>y</code> with a zero reference line, and a
+      one-paragraph reading.</blockquote>
+      <div class="note"><b>The contract:</b> "Expected output" is the definition of
+      done. The Runner runs until exactly this exists — no more, no less. Ambition
+      lives in the question; scope lives here.</div>
+    </section>
+
+    <section>
+      <span class="part">Part 2 — The code</span>
+      <h2>Runnable, bounded, blind to where the data lives</h2>
+      <p>The proposer attaches <code>run.py</code>. It never knows the data's real
+      location — it reads an environment variable the data side sets at run time,
+      and it may write into its own <code>./result/</code> folder and nowhere else:</p>
+      <pre><code>RESULT = Path(__file__).parent / "result"
+
+def load_demo():
+    """Synthesise (group, y) pairs, deterministic (seed 42)."""
+    rng = random.Random(42)
+    ...
+
+# a real round reads the actual tables instead:
+#   DATA_ROOT = Path(os.environ["DATA_ROOT"])
+#   df = pl.read_parquet(DATA_ROOT / "&lt;table&gt;.parquet")</code></pre>
+      <div class="note"><b>Before this code may touch a real dataset</b>, it passes an
+      automated scan — network access, subprocess spawns, file mutation, secret reads,
+      runtime installs all flag it — and then a human on the data side reads it anyway.
+      Then it runs sandboxed: non-root, data read-only, no network. That is the
+      <em>data gate</em>, the second of the three human gates.</div>
+    </section>
+
+    <section>
+      <span class="part">Part 3 — The reply</span>
+      <h2>Aggregates come back into the same thread</h2>
+      <p>The data side runs the code and pushes the results — a write-up, figures,
+      small tables — into the same pull request. This one opens with the protocol's
+      loudest rule:</p>
+      <div class="banner">SYNTHETIC — smoke test, do not cite</div>
+      <div class="note"><b>Why so loud:</b> output produced without real data must be
+      unmistakable, because it once nearly wasn't — an early deployment almost merged
+      unlabelled smoke-test tables as real results. Rules here are scars, not
+      theories. On a real round, the data side's run <em>replaces</em> this placeholder.</div>
+      <blockquote><strong>Headline.</strong> Mean outcome <code>y</code> ranges from
+      −0.031 (charlie) to +0.100 (foxtrot), with near-identical dispersion
+      (sd ≈ 0.15) across all six groups — by construction.</blockquote>
+      <figure>
+        <img src="../assets/letter/y_by_group.png" alt="Bar chart: mean outcome y by group, with a zero reference line" width="910" height="520">
+        <figcaption>The figure that came back — <code>result/figures/y_by_group.png</code>,
+        committed into the round's folder.</figcaption>
+      </figure>
+      <blockquote><strong>Caveats.</strong> Everything: the data is synthesised. This
+      round demonstrates the format only.</blockquote>
+      <div class="note"><b>The habit to notice:</b> every reply must state what it does
+      <em>not</em> establish. Honest caveats are part of the contract, not a courtesy.</div>
+    </section>
+
+    <section>
+      <span class="part">Part 4 — The record</span>
+      <h2>Merged means archived, forever</h2>
+      <p>Continuous checks watch every round: no file over a few MB, no raw-data
+      formats, the folder structure intact. When they're green and the humans on both
+      sides are content, the round merges — and its folder on <code>main</code>
+      becomes the permanent, citable record of the question and its answer. Dead ends
+      merge too, as post-mortems: the archive keeps everything tried, and why it
+      stopped.</p>
+      <div class="note"><b>That's the whole loop.</b> One question, one folder, one
+      pull request — ask, run, reply, merge. Everything else in the
+      <a href="https://github.com/republic-of-letters/protocol">protocol</a> is detail
+      in service of this exchange.</div>
+      <p style="margin-top:1.4rem"><strong>Do it yourself:</strong> the onboarding
+      drill has you (and your AI agent) reproduce exactly this round in about 30
+      minutes — <a href="https://github.com/republic-of-letters/protocol/blob/main/ONBOARDING.md">ONBOARDING.md</a>.
+      The original files are at
+      <a href="https://github.com/republic-of-letters/protocol/tree/main/exchange/R000-example-hello">exchange/R000-example-hello</a>.</p>
+    </section>
+  </article>
+
+  <footer>
+    <a href="../">← Back to the Republic of Letters</a> · <a href="../zh/letter/">中文</a>
+  </footer>
+</main>
+</body>
+</html>

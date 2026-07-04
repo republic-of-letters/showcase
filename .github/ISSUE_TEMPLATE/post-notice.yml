@@ -1,0 +1,88 @@
+name: Post a notice
+description: Put an OFFERING or SEEKING silhouette on the notice board.
+title: "[notice] "
+labels: ["notice"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Silhouettes only.** No table names, no variable lists, no source names
+        you wouldn't put on a poster. The board shows the shape of what you hold
+        or seek — details are disclosed later, inside a project's trust circle.
+        A maintainer reviews this and carries it into `notices.yaml` by PR.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options:
+        - "OFFERING — I hold something"
+        - "SEEKING — I need something"
+    validations:
+      required: true
+  - type: dropdown
+    id: what
+    attributes:
+      label: What
+      options:
+        - data
+        - licence (WRDS, Compustat, ...)
+        - compute
+        - methods
+        - ideas
+    validations:
+      required: true
+  - type: input
+    id: area
+    attributes:
+      label: Topic area
+      placeholder: "e.g. prediction-market microstructure; corporate disclosure; trade policy"
+    validations:
+      required: true
+  - type: input
+    id: shape
+    attributes:
+      label: Shape (data notices)
+      placeholder: "coarse only: panel / cross-section / text corpus / network / time series"
+  - type: input
+    id: scale
+    attributes:
+      label: Scale (order of magnitude only)
+      placeholder: "e.g. ~1e8 rows; ~50k documents"
+  - type: input
+    id: period
+    attributes:
+      label: Period covered
+      placeholder: "e.g. 2020–2026"
+  - type: dropdown
+    id: terms
+    attributes:
+      label: Terms (data / licence notices)
+      options:
+        - "can-run — code comes to me, I run it"
+        - "can-share — can be ingested into a project's data server"
+        - "licence-bound — stays on my machine, joins on derived tables"
+        - "not applicable"
+  - type: textarea
+    id: seeking
+    attributes:
+      label: What you want in return
+      placeholder: "e.g. hypotheses and estimation ideas; a data partner; co-authors with domain expertise"
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Contact
+      placeholder: "@your-handle — or the word `watch` to stay anonymous (you respond to interest yourself)"
+    validations:
+      required: true
+  - type: dropdown
+    id: duration
+    attributes:
+      label: How long should it stay up?
+      options:
+        - 3 months
+        - 6 months
+        - 12 months
+    validations:
+      required: true
